@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #0c0d11;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+*::selection {
+    background: #454864;
+}
+.input-cursor {
+    display: inline-block;
+    width: 1.5px;
+    height: 30px;
+    background-color:#7ebab5;
+    animation: blink .6s linear infinite alternate;
+}
+
+@keyframes blink {
+    0% {opacity: 1;}
+    40% {opacity: 1;}
+    60% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+#logo {
+    color: #7ebab5;
+    font-size: 300%;
+    position: relative;
+    margin: 1em;
+}
+
+.end {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    padding: 1em;
+}
+
+#victory {
+    position: absolute;
+    margin-top: 1em;
+    visibility: hidden;
+}
+
+#wpm {
+    position: relative;
+    color: #7ebab5;
+    font-size: 290%;
+    margin: 1em;
+}
+
+#acc {
+    position: relative;
+    color: #7ebab5;
+    font-size: 290%;
+}
+
+#sec {
+    color: #7ebab5;
+    position: absolute;
+    font-size: 300%;
+    top: 2em;
+    z-index: 1000000;
+    left: 47vw;
+}
+
+#text {
+    padding: 1em;
+    color: #454864;
+    text-align: center;
+    position: relative;
+    top: 5vh;
+    font-size: xx-large;
+    text-align: center;
+    width: 95vw;
+    word-wrap: break-word;
+}
+
+#phrase {
+    visibility: hidden;
+    position: absolute;
+}
+
+#phraseText {
+    visibility: hidden;
+    position: absolute;
+}
+
+.footer {
+    color: #454864; 
+    position: absolute;
+    bottom: 1em;
+    left: 42vw;
+}
