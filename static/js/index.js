@@ -63,6 +63,9 @@ function over() {
     document.removeEventListener("keydown", onKeyPress)
     countdown.innerHTML = ""
     let accuracy = Math.floor(((inputLetters.length - mistakes) / inputLetters.length) * 100)
+    if (accuracy < 0) {
+        accuracy = 0;
+    }
     document.getElementById("acc").innerText = `Accuracy: ${accuracy}%`; 
 }
 
@@ -76,6 +79,10 @@ function startTimer() {
         if (sec == 30) {
             let wpm = Math.floor(wordNum / (sec / 60));
             let wpmText = document.getElementById("wpm");
+            const http = new XMLHttpRequest();
+            const url = `${window.location.href}wpm/${wpm}`;
+            http.open("GET", url);
+            http.send();
             wpmText.innerText = `${wpm} words per minute!`;
         } else {
             let wpm = Math.floor(len / (sec / 60));

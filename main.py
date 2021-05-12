@@ -18,7 +18,18 @@ def main():
     phrase_text = lorem.paragraph()
     phrase = convert(phrase_text)
     year = date.today().year
-    return render_template("index.html", phrase=phrase, phrase_text=phrase_text, year=year)
+    with open("wpm.txt", "r") as f:
+        record = f.read()
+    return render_template("index.html", phrase=phrase, phrase_text=phrase_text, year=year, record=record)
+
+@app.route("/wpm/<int:wpm>")
+def wpm(wpm):
+    with open("wpm.txt", "r") as f:
+        recorded = int(f.read())
+    if wpm > recorded:
+        with open("wpm.txt", "w") as f:
+            f.write(str(wpm))
+    return "OK"
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
