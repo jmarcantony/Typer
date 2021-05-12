@@ -9,7 +9,8 @@
 </head>
 <body>
     <h1 id="logo">Typer</h1>
-    <p id="record">Highest WPM: {{ record }}</p>
+    <p class="record1">Highest WPM: {{ record }}</p>
+    <p class="record2">Name: {{ record_maker }}</p>
     <div class="end" id="end">
         <center>
             <div id="victory"></div>
@@ -20,7 +21,9 @@
     <h1 id="sec"></h1>
     <div id="text"></div>
     <input type="text" value="{{ phrase }}" id="phrase">
-    <input id="phraseText" value="{{ phrase_text }}"></input> 
+    <input id="phraseText" value="{{ phrase_text }}"></input>
+    <input id="username" value="{{ username }}"> 
+    <input id="isAnonymous" value="{{ anonymous }}"> 
     <p class="footer">&copy; Joseph Marc Antony, {{ year }}</p>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>

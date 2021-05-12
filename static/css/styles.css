@@ -34,13 +34,22 @@ html {
     margin: 1em;
 }
 
-#record {
+.record1 {
     color: #f6f5f5;
     position: absolute;
+    margin: 1em;
     top: 0;
+    right: 0;
+    font-size: x-large;
+}
+
+.record2 {
+    color: #f6f5f5;
+    position: absolute;
     margin: 1em;
     right: 0;
     font-size: x-large;
+    top: 1.5em;
 }
 
 .end {
@@ -96,6 +105,16 @@ html {
 }
 
 #phraseText {
+    visibility: hidden;
+    position: absolute;
+}
+
+#username {
+    visibility: hidden;
+    position: absolute;
+}
+
+#isAnonymous {
     visibility: hidden;
     position: absolute;
 }

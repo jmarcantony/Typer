@@ -11,6 +11,19 @@ let countdown = document.getElementById("sec");
 let wordNum = 0;
 let mistakes = 0;
 let inputLetters = [];
+let isAnonymous = document.getElementById("isAnonymous").value;
+
+if (isAnonymous === "True") {
+    let name = prompt("Enter you're name:");
+    if (name.trim() === "") {
+        name = "Anonymous"
+    }
+    const http = new XMLHttpRequest();
+    const url = `${window.location.href}name/${name}`;
+    http.open("GET", url);
+    http.send();
+    document.getElementById("username").value = name;
+}
 
 function onKeyPress(e) {
     let validLetters = [' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', "?", ".", ","]; 
@@ -88,6 +101,11 @@ function startTimer() {
             let wpm = Math.floor(len / (sec / 60));
             let wpmText = document.getElementById("wpm");
             wpmText.innerText = `${wpm} words per minute!`
+            const http = new XMLHttpRequest();
+            const url = `${window.location.href}wpm/${wpm}`;
+            http.open("GET", url);
+            http.send();
+            wpmText.innerText = `${wpm} words per minute!`;
         }
     }
 }
